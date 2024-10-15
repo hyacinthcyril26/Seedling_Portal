@@ -148,7 +148,7 @@ $rowf = mysqli_fetch_array($resultf);
             <div class="profile-picture">
                 <i class="fas fa-user-circle"></i>
                 <span id="greeting">
-                                Hi, <?php echo htmlspecialchars($rowf["first_name"] ?? ''); ?>s
+                                Hi, <?php echo htmlspecialchars($rowf["first_name"] ?? ''); ?>
                             </span>
             </div>
             <div class="profile-options">
