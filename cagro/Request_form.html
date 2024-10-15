@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request History</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #006400;
+            flex: 1;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+            margin: 0;
+        }
+
+        .nav-links li {
+            margin-right: 15px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #006400;
+            font-size: 16px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-links li a.active {
+            background-color: #228B22;
+            color: white;
+        }
+
+        /* Search and Filter */
+        .search-container {
+            display: flex;
+            justify-content: flex-end;
+            margin: 20px;
+        }
+
+        .search-container input {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px 40px 10px 20px;
+            border-radius: 50px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            position: relative;
+        }
+
+        .search-container i {
+            position: absolute;
+            left: 25px;
+            top: 35px;
+            color: #888;
+        }
+
+        .filter-btn {
+            background-color: #38a169;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .filter-btn i {
+            margin-right: 5px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Table Styling */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 12px 20px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f1f1f1;
+            font-weight: 600;
+            border-top: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Border for the table */
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Seedling Portal</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="basket.php">Basket</a></li>
+            <li><a href="history.php" class="active">History</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Search and Filter -->
+    <div class="search-container">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search...">
+        <button class="filter-btn">
+            <i class="fas fa-filter"></i> Filter
+        </button>
+    </div>
+
+    <h1 class="title">Request History</h1>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Quantity</th>
+                    <th>Seeds Requested</th>
+                    <th>Status</th>
+                    <th>Date Received</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pending</td>
+                    <td>Pending</td>
+                    <td>Pumpkin Seeds (Kalabasa), Eggplant Seeds (Talong), Cottonfruit Seeds (Santol)</td>
+                    <td>Pending</td>
+                    <td>Pending</td>
+                </tr>
+                <tr>
+                    <td>Approved</td>
+                    <td>Approved</td>
+                    <td>Technology Department</td>
+                    <td>Approved</td>
+                    <td>Approved</td>
+                </tr>
+                <tr>
+                    <td>Approved</td>
+                    <td>Approved</td>
+                    <td>Technology Department</td>
+                    <td>Approved</td>
+                    <td>Approved</td>
+                </tr>
+                <tr>
+                    <td>Approved</td>
+                    <td>Approved</td>
+                    <td>Technology Department</td>
+                    <td>Approved</td>
+                    <td>Approved</td>
+                </tr>
+                <tr>
+                    <td>Approved</td>
+                    <td>Approved</td>
+                    <td>Technology Department</td>
+                    <td>Approved</td>
+                    <td>Approved</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

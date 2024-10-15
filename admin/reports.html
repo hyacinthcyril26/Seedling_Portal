@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Requests</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Hamburger Menu Icon -->
+        <div class="hamburger" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="cagro_logo.png" alt="Company Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="dashboard.php">
+                            <i class="fa-solid fa-house"></i>Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="request.php">
+                            <i class="fas fa-file-alt"></i>Request
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cat_mgmt.php"><i class="fas fa-cogs">
+                            </i>Catalog Management
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reports.html" class="active">
+                            <i class="fas fa-chart-bar"></i>Reports
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <i class="fas fa-solid fas fa-circle-user top-right-icon"></i>
+                <!-- Profile Modal -->
+                <div class="profile-modal" id="profile-modal">
+                    <div class="profile-modal-content">
+                        <div class="profile-picture">
+                            <i class="fas fa-user"></i>
+                            <span>Hi Admin</span>
+                        </div>
+                        <div class="profile-options">
+                            <div class="option">
+                                <i class="fas fa-pencil-alt"></i>
+                                <span>Edit Profile</span>
+                            </div>
+                            <div class="option logout" id="logout-option">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Log Out</span>
+                            </div>                
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="status-buttons">
+                        <div class="button active">Today's Released Seed</div>
+                        <div class="button">Weekly Released Seed</div>
+                        <div class="button">Monthly Released Seed</div>
+                    </div>                
+                </div>
+                <div class="filter-container">
+                    <div class="date-picker">
+                        <input type="text" placeholder="09/01/24">
+                        <i class="fas fa-calendar-alt"></i>
+                        <i class="fas fa-caret-down"></i>
+                    </div>
+                    <span>-</span>
+                    <div class="date-picker">
+                        <input type="text" placeholder="09/31/24">
+                        <i class="fas fa-calendar-alt"></i>
+                        <i class="fas fa-caret-down"></i>
+                    </div>
+                    <button class="filter-btn">
+                        <i class="fas fa-filter"></i> Filter
+                    </button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email Address</th>
+                            <th>Items Requested and Quantity</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lindsey Stroud</td>
+                            <td>lindsey.stroud@gmail.com</td>
+                            <td>Head of Technology</td>
+                            <td>Pending</td>
+                        </tr>
+                        <tr>
+                            <td>Sarah Brown</td>
+                            <td>sarah.brown@gmail.com</td>
+                            <td>Head of Technology</td>
+                            <td>Approved</td>
+                        </tr>
+                        <tr>
+                            <td>Micheal Owen</td>
+                            <td>michael.owen@gmail.com</td>
+                            <td>Head of Technology</td>
+                            <td>Approved</td>
+                        </tr>
+                        <tr>
+                            <td>Mary Jane</td>
+                            <td>mary.jane@gmail.com</td>
+                            <td>Head of Technology</td>
+                            <td>Pending</td>
+                        </tr>
+                        <tr>
+                            <td>Peter Dodle</td>
+                            <td>peter.doodle@gmail.com</td>
+                            <td>Head of Technology</td>
+                            <td>Pending</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </main>
+        </div>
+    </body>
+    <script>
+        // Profile Modal Toggle
+        const profileIcon = document.querySelector('.top-right-icon');
+        const profileModal = document.getElementById('profile-modal');
+    
+        // Add click event listener to the profile icon
+        profileIcon.addEventListener('click', () => {
+            // Toggle the modal's visibility when the icon is clicked
+            if (profileModal.style.display === 'block') {
+                profileModal.style.display = 'none';
+            } else {
+                profileModal.style.display = 'block';
+            }
+        });
+        // Close modal if clicked outside
+        window.addEventListener('click', (e) => {
+            if (!profileModal.contains(e.target) && !profileIcon.contains(e.target)) {
+                profileModal.style.display = 'none';
+            }
+        });
+    
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('active');
+        }
+    // hamburger
+    function toggleSidebar() {
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.classList.toggle('active');
+    }
+        
+      // Logout Functionality
+      const logoutOption = document.getElementById('logout-option');
+
+    logoutOption.addEventListener('click', () => {
+    window.location.href = 'http://localhost/SEEDLING_PORTAL/index.php'; 
+    });
+</script>
+</html>

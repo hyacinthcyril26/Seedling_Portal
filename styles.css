@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: white;
+}
+
+.left {
+    width: 50%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.left img {
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.left h2 {
+    font-size: 22px;
+    color: #000;
+    text-align: center;
+}
+
+.right {
+    width: 50%;
+    background-color: #2e8121;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.seedling-portal-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.login-box {
+    width: 50%;
+    background-color: white;
+    padding: 40px;
+    border-radius: 0px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.login-box label {
+    display: block;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #f2f2f2;
+}
+
+.login-box button {
+    width: 50%; 
+    padding: 10px;
+    background-color: #2e8121;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.login-box a {
+    text-decoration: none;
+    color: #2400FF;
+    font-size: 14px;
+}
+
+.login-box .forgot-password {
+    float: right;
+    margin-bottom: 5px;
+    font-size: 10px;
+    cursor: pointer;
+    color: #2400FF;
+}
+
+.sign-up {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 10px;
+}
+.login-box .signup a,
+.login-box .forgot-password {
+    text-decoration: underline;
+}
+.login-box .signup {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 10px;
+}
+
+.login-box .signup a,
+.login-box .forgot-password {
+    text-decoration: underline;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; 
+    max-width: 400px; 
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.signup-box h2 {
+    display: block;
+    margin-bottom: 10px;
+    color: #2e8121;
+    text-align: center; /* Center the title */
+}
+
+.signup-box label {
+    display: block;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.signup-box input[type="text"],
+.signup-box input[type="email"],
+.signup-box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #f2f2f2;
+}
+
+.signup-box button {
+    width: 50%; 
+    padding: 10px;
+    background-color: #2e8121;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 0 auto; /* Center the button */
+    margin-top: 20px;
+}
+
+.name-fields {
+    display: flex;
+    justify-content: space-between; /* Distributes space between the fields */
+}
+
+.field {
+    width: 48%; /* Adjusts the width of each input field */
+}
+
+.field label {
+    display: block;
+    margin-bottom: 5px; /* Space between label and input */
+    color: #000; /* Color of the label text */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .login-box {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .login-box button {
+        width: 100%;
+    }
+
+    .seedling-portal-title {
+        font-size: 28px;
+    }
+
+    .login-box input[type="email"],
+    .login-box input[type="password"] {
+        font-size: 16px;
+    }
+
+    .modal-content {
+        width: 90%; 
+        padding: 15px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .seedling-portal-title {
+        font-size: 24px;
+    }
+
+    .login-box {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .login-box label {
+        font-size: 14px;
+    }
+
+    .login-box input[type="email"],
+    .login-box input[type="password"] {
+        font-size: 14px;
+    }
+
+    .login-box button {
+        font-size: 14px;
+        padding: 8px;
+    }
+    .error-message {
+        text-align: center;
+        color: red;
+        font-size: 18px;
+        background-color: #f8d7da; /* Light red background */
+        border: 1px solid #f5c6cb; /* Darker red border */
+        border-radius: 5px;
+        padding: 10px;
+        margin: 20px 0;
+    }
+    .login-box .signup,
+    .login-box .forgot-password {
+        font-size: 12px;
+    }
+}
