@@ -83,7 +83,8 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Contact Number</th>
-                                <th>Items Requested and Quantity</th>
+                                <th>Items Requested</th>
+                                <th>Quantity</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -132,29 +133,31 @@
 <script>
    
 
-    // Fetch data from server
-        function fetchRequests() {
-            fetch('fetch_requests.php')
-                .then(response => response.json())
-                .then(data => {
-                    const requestData = document.getElementById('request-data');
-                    requestData.innerHTML = ''; // Clear previous data
+   function fetchRequests() {
+    fetch('fetch_requests.php')
+        .then(response => response.json())
+        .then(data => {
+            const requestData = document.getElementById('request-data');
+            requestData.innerHTML = ''; // Clear previous data
 
-                    data.forEach(request => {
-                        const statusClass = request.status === 'Approved' ? 'status-approved' : request.status === 'Rejected' ? 'status-rejected' : '';
-                        requestData.innerHTML += `
-                            <tr>
-                                <td>${request.full_name}</td> <!-- Displaying the first name -->
-                                <td>${request.contact_number}</td> <!-- Displaying the contact number -->
-                                <td>${request.items_requested}</td>
-                                <td id="status-${request.id}" class="${statusClass}">${request.status}</td>
-                                <td>
-                                    <i class="fas fa-pencil-alt action-icon" data-id="${request.id}" onclick="openStatusModal(${request.id})"></i>
-                                </td>
-                            </tr>`;
-                    });
-                });
-            }
+            data.forEach(request => {
+                const statusClass = request.status === 'Approved' ? 'status-approved' : request.status === 'Rejected' ? 'status-rejected' : '';
+                requestData.innerHTML += `
+                    <tr>
+                        <td>${request.full_name}</td>
+                        <td>${request.contact_number}</td>
+                        <td>${request.items_requested}</td>
+                        <td>${request.qty}</td>
+                        <td id="status-${request.id}" class="${statusClass}">${request.status}</td>
+                        <td>
+                            <i class="fas fa-pencil-alt action-icon" data-id="${request.id}" onclick="openStatusModal(${request.id})"></i>
+                        </td>
+                    </tr>`;
+            });
+        })
+        .catch(error => console.error('Error fetching requests:', error)); // Error handling
+}
+
 
 
             function toggleDateInput() {
