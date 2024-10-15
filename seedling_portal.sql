@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 15, 2024 at 05:09 PM
+-- Generation Time: Oct 15, 2024 at 06:09 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -173,8 +173,6 @@ INSERT INTO `items` (`id`, `category`, `Seeds`, `description`, `qty`, `groups`, 
 CREATE TABLE `requests` (
   `id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `contact_number` varchar(15) DEFAULT NULL,
   `items_requested` varchar(255) NOT NULL,
   `qty` int(255) DEFAULT NULL,
   `status` enum('Pending','Approved','Rejected','Claimed') DEFAULT 'Pending',
@@ -187,22 +185,12 @@ CREATE TABLE `requests` (
 -- Dumping data for table `requests`
 --
 
-INSERT INTO `requests` (`id`, `user_id`, `name`, `contact_number`, `items_requested`, `qty`, `status`, `date_received`, `created_at`, `updated_at`) VALUES
-(1, NULL, 'John Doe', '09123456789', '10 pcs Seedlings', NULL, 'Rejected', NULL, '2024-10-08 20:17:19', '2024-10-09 05:56:07'),
-(2, NULL, 'Jane Smith', '09198765432', '20 pcs Fertilizer', NULL, 'Approved', NULL, '2024-10-08 20:17:19', '2024-10-08 20:17:19'),
-(3, NULL, 'Alice Johnson', '09087654321', '5 pcs Water Pump', NULL, 'Approved', NULL, '2024-10-08 20:17:19', '2024-10-08 20:29:00'),
-(4, NULL, 'Maria Clara', '09128885555', '50 seedlings of Coffee, 25 seedlings of Sugarcane', NULL, 'Approved', NULL, '2024-10-08 21:27:52', '2024-10-08 21:31:22'),
-(5, NULL, 'Luis Miguel', '09223334455', '10 seedlings of Jackfruit, 15 seedlings of Pineapple', NULL, 'Rejected', NULL, '2024-10-08 21:27:52', '2024-10-09 03:50:04'),
-(6, NULL, 'Alicia Keys', '09334455666', '40 seedlings of Avocado, 30 seedlings of Papaya', NULL, 'Rejected', NULL, '2024-10-08 21:27:52', '2024-10-15 14:09:47'),
-(7, NULL, 'Elon Musk', '09445566777', '100 seedlings of Apple, 80 seedlings of Orange', NULL, 'Rejected', NULL, '2024-10-08 21:27:52', '2024-10-09 04:23:07'),
-(8, NULL, 'Bill Gates', '09556677888', '60 seedlings of Cherry, 40 seedlings of Pear', NULL, 'Approved', NULL, '2024-10-08 21:27:52', '2024-10-09 03:33:02'),
-(9, NULL, 'Oprah Winfrey', '09667788999', '25 seedlings of Lemon, 10 seedlings of Lime', NULL, 'Pending', NULL, '2024-10-08 21:27:52', '2024-10-08 21:27:52'),
-(10, NULL, 'Steve Jobs', '09778899000', '5 seedlings of Dragonfruit, 12 seedlings of Blackberry', NULL, 'Pending', NULL, '2024-10-08 21:27:52', '2024-10-08 21:27:52'),
-(16, 19, NULL, NULL, 'Cassava', 2, 'Claimed', '2024-10-15', '2024-10-15 13:25:24', '2024-10-15 15:04:15'),
-(17, 1, NULL, NULL, 'Ube', 2, 'Rejected', NULL, '2024-10-15 14:10:53', '2024-10-15 15:04:04'),
-(18, 1, NULL, NULL, 'Cassava', 2, 'Pending', NULL, '2024-10-15 14:59:48', '2024-10-15 15:04:01'),
-(19, 21, NULL, NULL, 'Atsal', 2, 'Pending', NULL, '2024-10-15 15:00:14', '2024-10-15 15:00:14'),
-(20, 21, NULL, NULL, 'Ampalaya', 2, 'Pending', NULL, '2024-10-15 15:09:08', '2024-10-15 15:09:08');
+INSERT INTO `requests` (`id`, `user_id`, `items_requested`, `qty`, `status`, `date_received`, `created_at`, `updated_at`) VALUES
+(16, 19, 'Cassava', 2, 'Pending', NULL, '2024-10-15 13:25:24', '2024-10-15 16:07:15'),
+(17, 1, 'Ube', 2, 'Rejected', NULL, '2024-10-15 14:10:53', '2024-10-15 15:04:04'),
+(18, 1, 'Cassava', 2, 'Pending', NULL, '2024-10-15 14:59:48', '2024-10-15 15:04:01'),
+(19, 21, 'Atsal', 2, 'Pending', NULL, '2024-10-15 15:00:14', '2024-10-15 15:00:14'),
+(20, 21, 'Ampalaya', 2, 'Pending', NULL, '2024-10-15 15:09:08', '2024-10-15 15:09:08');
 
 --
 -- Indexes for dumped tables
@@ -243,7 +231,7 @@ ALTER TABLE `requests`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `farmers`
